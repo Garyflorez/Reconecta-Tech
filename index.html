@@ -493,9 +493,14 @@
                 <span style="color:var(--fg-muted);font-size:14px;">Envío</span>
                 <span style="font-family:'Space Grotesk';font-weight:600;color:var(--accent);">Calculado al pagar</span>
             </div>
-            <button onclick="handleCheckout()" class="btn-primary" style="width:100%;font-size:16px;padding:16px;">
-                <i class="fas fa-lock" style="margin-right:8px;"></i>Proceder al pago
-            </button>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+                <button onclick="handleCheckout('whatsapp')" class="btn-primary" style="width:100%;font-size:15px;padding:14px;">
+                    <i class="fab fa-whatsapp" style="margin-right:8px;"></i>Acordar por WhatsApp
+                </button>
+                <button onclick="handleCheckout('nequi')" style="width:100%;font-size:15px;padding:14px;background:#DA0081;color:white;border:none;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:600;transition:opacity 0.3s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                    <i class="fas fa-mobile-alt" style="margin-right:8px;"></i>Pagar con Nequi
+                </button>
+            </div>
             <button onclick="clearCart()" style="width:100%;margin-top:8px;background:none;border:none;color:var(--fg-muted);cursor:pointer;font-size:13px;padding:8px;transition:color 0.3s;" onmouseover="this.style.color='var(--danger)'" onmouseout="this.style.color='var(--fg-muted)'">
                 Vaciar carrito
             </button>
