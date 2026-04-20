@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconecta Tech — Tecnología Reacondicionada | Llorente, Nariño</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navegación -->
+    <nav id="navbar" style="position:fixed;top:0;left:0;right:0;z-index:80;transition:all 0.4s ease;background:transparent;">
+        <div style="max-width:1280px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;">
+            <a href="#inicio" style="text-decoration:none;display:flex;align-items:center;gap:10px;">
+                <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-dim));display:flex;align-items:center;justify-content:center;">
+                    <i class="fas fa-recycle" style="color:var(--bg);font-size:18px;"></i>
+                </div>
+                <span class="font-heading" style="font-size:20px;font-weight:700;color:var(--fg);">Reconecta<span style="color:var(--accent);">Tech</span></span>
+            </a>
+            <div style="display:flex;align-items:center;gap:32px;" class="hidden md:flex">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#productos" class="nav-link">Productos</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;">
+                <button id="cartBtn" onclick="toggleCart()" style="position:relative;background:none;border:none;cursor:pointer;color:var(--fg);font-size:20px;padding:8px;" aria-label="Abrir carrito de compras">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span id="cartCount" style="position:absolute;top:0;right:0;background:var(--accent);color:var(--bg);font-size:10px;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;">0</span>
+                </button>
+                <button id="menuToggle" class="md:hidden" onclick="toggleMobileMenu()" style="background:none;border:none;cursor:pointer;color:var(--fg);font-size:22px;padding:8px;" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menú móvil -->
+    <div id="mobileMenu" class="mobile-menu">
+        <button onclick="toggleMobileMenu()" style="position:absolute;top:20px;right:24px;background:none;border:none;color:var(--fg);font-size:28px;cursor:pointer;" aria-label="Cerrar menú">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#inicio" onclick="toggleMobileMenu()">Inicio</a>
+        <a href="#productos" onclick="toggleMobileMenu()">Productos</a>
+        <a href="#servicios" onclick="toggleMobileMenu()">Servicios</a>
+        <a href="#contacto" onclick="toggleMobileMenu()">Contacto</a>
+    </div>
+
+    <!-- Hero Section -->
+    <header id="inicio" style="position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;">
+        <div class="hero-bg"></div>
+        <div class="grid-pattern"></div>
+        <div id="particles" style="position:absolute;inset:0;z-index:1;pointer-events:none;"></div>
+        <div style="position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:120px 24px 80px;width:100%;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;" class="hero-grid">
+                <div>
+                    <div style="display:inline-flex;align-items:center;gap:8px;background:var(--accent-glow);border:1px solid rgba(0,230,138,0.2);border-radius:30px;padding:6px 16px;margin-bottom:24px;">
+                        <div style="width:6px;height:6px;border-radius:50%;background:var(--accent);"></div>
+                        <span style="font-size:13px;color:var(--accent);font-weight:500;">Desde Llorente, Nariño para todo Colombia</span>
+                    </div>
+                    <h1 class="font-heading" style="font-size:clamp(36px,5.5vw,68px);font-weight:700;line-height:1.05;margin-bottom:24px;">
+                        Tecnología<br>
+                        <span style="background:linear-gradient(135deg,var(--accent),var(--warm));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">reacondicionada</span><br>
+                        que confías
+                    </h1>
+                    <p style="font-size:18px;color:var(--fg-muted);line-height:1.7;max-width:480px;margin-bottom:36px;">
+                        Celulares y computadores restaurados con garantía real. Asesoría personalizada, mantenimiento y reparación profesional en un solo lugar.
+                    </p>
+                    <div style="display:flex;gap:14px;flex-wrap:wrap;">
+                        <a href="#productos" class="btn-primary" style="font-size:16px;padding:16px 32px;text-decoration:none;">
+                            <i class="fas fa-search" style="margin-right:8px;"></i>Explorar equipos
+                        </a>
+                        <a href="#servicios" class="btn-outline" style="font-size:16px;padding:16px 32px;text-decoration:none;">
+                            Nuestros servicios
+                        </a>
+                    </div>
+                    <div style="display:flex;gap:32px;margin-top:40px;">
+                        <div>
+                            <div style="font-family:'Space Grotesk';font-size:28px;font-weight:700;color:var(--fg);">500+</div>
+                            <div style="font-size:13px;color:var(--fg-muted);">Equipos vendidos</div>
+                        </div>
+                        <div style="width:1px;background:var(--border);"></div>
+                        <div>
+                            <div style="font-family:'Space Grotesk';font-size:28px;font-weight:700;color:var(--fg);">3 meses</div>
+                            <div style="font-size:13px;color:var(--fg-muted);">Garantía incluida</div>
+                        </div>
+                        <div style="width:1px;background:var(--border);"></div>
+                        <div>
+                            <div style="font-family:'Space Grotesk';font-size:28px;font-weight:700;color:var(--fg);">4.8<i class="fas fa-star" style="font-size:14px;color:var(--warm);margin-left:4px;"></i></div>
+                            <div style="font-size:13px;color:var(--fg-muted);">Calificación</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="position:relative;" class="hidden md:block">
+                    <div id="heroShowcase" style="position:relative;width:100%;aspect-ratio:1;max-width:500px;margin:0 auto;">
+                        <!-- Las imágenes del hero se generan con JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Barra de confianza -->
+    <section style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-secondary);">
+        <div style="max-width:1280px;margin:0 auto;padding:20px 24px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;color:var(--fg-muted);font-size:14px;">
+                <i class="fas fa-shield-halved" style="color:var(--accent);font-size:18px;"></i>
+                <span>Garantía de 3 meses</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;color:var(--fg-muted);font-size:14px;">
+                <i class="fas fa-truck" style="color:var(--accent);font-size:18px;"></i>
+                <span>Envíos a todo Llorente y Tumaco</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;color:var(--fg-muted);font-size:14px;">
+                <i class="fas fa-rotate-left" style="color:var(--accent);font-size:18px;"></i>
+                <span>Devolución en 7 días</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;color:var(--fg-muted);font-size:14px;">
+                <i class="fas fa-tools" style="color:var(--accent);font-size:18px;"></i>
+                <span>Técnicos certificados</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Informativa: Productos Remanufacturados -->
+    <section style="background:var(--bg);border-bottom:1px solid var(--border);">
+        <div style="max-width:1280px;margin:0 auto;padding:80px 24px;">
+            <div class="reveal" style="text-align:center;margin-bottom:60px;">
+                <div class="section-divider" style="margin:0 auto 16px;"></div>
+                <h2 class="font-heading" style="font-size:clamp(28px,4vw,42px);font-weight:700;margin-bottom:12px;">¿Qué significan nuestros productos remanufacturados?</h2>
+                <p style="color:var(--fg-muted);font-size:16px;max-width:680px;margin:0 auto;line-height:1.7;">Entendemos que es importante saber qué estás comprando. Te explicamos de forma transparente qué hace que nuestros equipos sean una excelente opción.</p>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;">
+                <!-- Card 1: Remanufacturados -->
+                <div class="reveal" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;position:relative;overflow:hidden;">
+                    <div style="position:absolute;top:-20px;right:-20px;width:120px;height:120px;background:radial-gradient(circle, rgba(0,230,138,0.1) 0%, transparent 70%);border-radius:50%;"></div>
+                    <div style="position:relative;z-index:1;">
+                        <div style="width:56px;height:56px;border-radius:14px;background:rgba(0,230,138,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+                            <i class="fas fa-hammer" style="color:var(--accent);font-size:24px;"></i>
+                        </div>
+                        <h3 class="font-heading" style="font-size:20px;font-weight:700;margin-bottom:12px;color:var(--fg);">Remanufacturados</h3>
+                        <p style="color:var(--fg-muted);font-size:15px;line-height:1.7;margin-bottom:16px;">Cada equipo ha sido sometido a un riguroso proceso de restauración. Nuestros técnicos certificados reemplazan piezas desgastadas, limpian completamente los dispositivos y realizan pruebas exhaustivas para garantizar su funcionamiento óptimo.</p>
+                        <div style="border-top:1px solid var(--border);padding-top:16px;">
+                            <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--accent);font-weight:600;">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Proceso de 20 puntos de verificación</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Segunda Mano en Buenas Condiciones -->
+                <div class="reveal" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;position:relative;overflow:hidden;" style="animation-delay:0.1s;">
+                    <div style="position:absolute;top:-20px;right:-20px;width:120px;height:120px;background:radial-gradient(circle, rgba(240,192,64,0.1) 0%, transparent 70%);border-radius:50%;"></div>
+                    <div style="position:relative;z-index:1;">
+                        <div style="width:56px;height:56px;border-radius:14px;background:rgba(240,192,64,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+                            <i class="fas fa-star" style="color:var(--warm);font-size:24px;"></i>
+                        </div>
+                        <h3 class="font-heading" style="font-size:20px;font-weight:700;margin-bottom:12px;color:var(--fg);">Segunda Mano, Excelente Estado</h3>
+                        <p style="color:var(--fg-muted);font-size:15px;line-height:1.7;margin-bottom:16px;">Nuestros productos son equipos de segunda mano que hemos seleccionado cuidadosamente. Aunque tienen uso previo, todos cumplen con altos estándares de calidad. Clasificamos cada dispositivo por su condición (A, B o C) para que sepas exactamente qué esperar.</p>
+                        <div style="border-top:1px solid var(--border);padding-top:16px;">
+                            <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--warm);font-weight:600;">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Condiciones garantizadas y auténticas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Importados del Extranjero -->
+                <div class="reveal" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;position:relative;overflow:hidden;" style="animation-delay:0.2s;">
+                    <div style="position:absolute;top:-20px;right:-20px;width:120px;height:120px;background:radial-gradient(circle, rgba(100,180,255,0.1) 0%, transparent 70%);border-radius:50%;"></div>
+                    <div style="position:relative;z-index:1;">
+                        <div style="width:56px;height:56px;border-radius:14px;background:rgba(100,180,255,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+                            <i class="fas fa-globe" style="color:#64b4ff;font-size:24px;"></i>
+                        </div>
+                        <h3 class="font-heading" style="font-size:20px;font-weight:700;margin-bottom:12px;color:var(--fg);">Importados del Extranjero</h3>
+                        <p style="color:var(--fg-muted);font-size:15px;line-height:1.7;margin-bottom:16px;">Traemos equipos de calidad internacional desde mercados especializados en tecnología remanufacturada. Esto nos permite ofrecerte marcas premium a precios accesibles, sin perder calidad ni garantía. Todos los equipos cumplen con regulaciones internacionales.</p>
+                        <div style="border-top:1px solid var(--border);padding-top:16px;">
+                            <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#64b4ff;font-weight:600;">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Certificados internacionalmente</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Callout informativo adicional -->
+            <div class="reveal" style="margin-top:60px;background:linear-gradient(135deg, rgba(0,230,138,0.08), rgba(240,192,64,0.05));border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;">
+                <i class="fas fa-lightbulb" style="color:var(--accent);font-size:32px;margin-bottom:16px;"></i>
+                <h3 class="font-heading" style="font-size:20px;font-weight:700;margin-bottom:12px;color:var(--fg);">¿Por qué elegir remanufacturado?</h3>
+                <p style="color:var(--fg-muted);font-size:15px;line-height:1.7;max-width:700px;margin:0 auto;">Obtienes tecnología de calidad certificada a una fracción del precio original. Además, al reutilizar equipos, contribuimos juntos con el medio ambiente. <strong style="color:var(--fg);">No estás comprando "basura"</strong>, estás adquiriendo un producto restaurado profesionalmente con <strong style="color:var(--accent);">3 meses de garantía incluida</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <main>
+        <section id="productos" style="max-width:1280px;margin:0 auto;padding:100px 24px;">
+            <div class="reveal">
+                <div class="section-divider" style="margin-bottom:16px;"></div>
+                <h2 class="font-heading" style="font-size:clamp(28px,4vw,42px);font-weight:700;margin-bottom:8px;">Equipos disponibles</h2>
+                <p style="color:var(--fg-muted);font-size:16px;margin-bottom:40px;">Cada equipo pasa por un proceso de 20 puntos de verificación antes de ser publicado.</p>
+            </div>
+
+            <!-- Filtros -->
+            <div class="reveal" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px;">
+                <button class="filter-btn active" onclick="filterProducts('todos', this)">Todos</button>
+                <button class="filter-btn" onclick="filterProducts('celular', this)"><i class="fas fa-mobile-alt" style="margin-right:6px;"></i>Celulares</button>
+                <button class="filter-btn" onclick="filterProducts('computador', this)"><i class="fas fa-laptop" style="margin-right:6px;"></i>Computadores</button>
+                <button class="filter-btn" onclick="filterProducts('tablet', this)"><i class="fas fa-tablet-alt" style="margin-right:6px;"></i>Tablets</button>
+                <button class="filter-btn" onclick="filterProducts('accesorio', this)"><i class="fas fa-headphones" style="margin-right:6px;"></i>Accesorios</button>
+            </div>
+
+            <!-- Grid de productos -->
+            <div id="productsGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:24px;">
+                <!-- Se llena con JS -->
+            </div>
+        </section>
+
+        <!-- Servicios -->
+        <section id="servicios" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+            <div style="max-width:1280px;margin:0 auto;padding:100px 24px;">
+                <div class="reveal" style="text-align:center;margin-bottom:60px;">
+                    <div class="section-divider" style="margin:0 auto 16px;"></div>
+                    <h2 class="font-heading" style="font-size:clamp(28px,4vw,42px);font-weight:700;margin-bottom:8px;">Nuestros servicios</h2>
+                    <p style="color:var(--fg-muted);font-size:16px;max-width:560px;margin:0 auto;">Más que una tienda, somos tu aliado tecnológico en Llorente y la región.</p>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+                    <div class="service-card reveal">
+                        <div class="service-icon" style="background:rgba(0,230,138,0.1);color:var(--accent);">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="font-heading" style="font-size:20px;font-weight:600;margin-bottom:12px;">Asesoría de compra</h3>
+                        <p style="color:var(--fg-muted);font-size:14px;line-height:1.7;">Te ayudamos a elegir el equipo ideal según tus necesidades y presupuesto. Evaluamos contigo las especificaciones técnicas para que tomes la mejor decisión.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon" style="background:rgba(240,192,64,0.1);color:var(--warm);">
+                            <i class="fas fa-screwdriver-wrench"></i>
+                        </div>
+                        <h3 class="font-heading" style="font-size:20px;font-weight:600;margin-bottom:12px;">Mantenimiento</h3>
+                        <p style="color:var(--fg-muted);font-size:14px;line-height:1.7;">Limpieza profunda, cambio de pasta térmica, actualización de software y optimización de sistema para que tu equipo funcione como nuevo.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon" style="background:rgba(255,77,106,0.1);color:var(--danger);">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3 class="font-heading" style="font-size:20px;font-weight:600;margin-bottom:12px;">Reparación</h3>
+                        <p style="color:var(--fg-muted);font-size:14px;line-height:1.7;">Cambio de pantallas, baterías, conectores de carga, placas y más. Diagnóstico gratuito y presupuesto antes de intervenir tu equipo.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon" style="background:rgba(100,180,255,0.1);color:#64b4ff;">
+                            <i class="fas fa-arrow-right-arrow-left"></i>
+                        </div>
+                        <h3 class="font-heading" style="font-size:20px;font-weight:600;margin-bottom:12px;">Compra tu usado</h3>
+                        <p style="color:var(--fg-muted);font-size:14px;line-height:1.7;">¿Tienes un equipo que ya no usas? Te lo compramos a precio justo, lo reacondicionamos y le damos una segunda vida responsable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proceso de reacondicionamiento -->
+        <section style="max-width:1280px;margin:0 auto;padding:100px 24px;">
+            <div class="reveal" style="text-align:center;margin-bottom:60px;">
+                <div class="section-divider" style="margin:0 auto 16px;"></div>
+                <h2 class="font-heading" style="font-size:clamp(28px,4vw,42px);font-weight:700;margin-bottom:8px;">Proceso de reacondicionamiento</h2>
+                <p style="color:var(--fg-muted);font-size:16px;">20 puntos de control para garantizar la calidad de cada equipo.</p>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;position:relative;">
+                <!-- Línea conectora -->
+                <div style="position:absolute;top:40px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,var(--border),var(--accent),var(--border),transparent);z-index:0;" class="hidden md:block"></div>
+                <div class="reveal" style="text-align:center;position:relative;z-index:1;">
+                    <div style="width:56px;height:56px;border-radius:50%;background:var(--card);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:'Space Grotesk';font-weight:700;color:var(--accent);font-size:20px;">1</div>
+                    <h4 class="font-heading" style="font-size:16px;font-weight:600;margin-bottom:8px;">Recepción</h4>
+                    <p style="font-size:13px;color:var(--fg-muted);">Evaluación inicial y registro del equipo</p>
+                </div>
+                <div class="reveal" style="text-align:center;position:relative;z-index:1;">
+                    <div style="width:56px;height:56px;border-radius:50%;background:var(--card);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:'Space Grotesk';font-weight:700;color:var(--accent);font-size:20px;">2</div>
+                    <h4 class="font-heading" style="font-size:16px;font-weight:600;margin-bottom:8px;">Diagnóstico</h4>
+                    <p style="font-size:13px;color:var(--fg-muted);">Revisión hardware y software completa</p>
+                </div>
+                <div class="reveal" style="text-align:center;position:relative;z-index:1;">
+                    <div style="width:56px;height:56px;border-radius:50%;background:var(--card);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:'Space Grotesk';font-weight:700;color:var(--accent);font-size:20px;">3</div>
+                    <h4 class="font-heading" style="font-size:16px;font-weight:600;margin-bottom:8px;">Reparación</h4>
+                    <p style="font-size:13px;color:var(--fg-muted);">Cambio de componentes si es necesario</p>
+                </div>
+                <div class="reveal" style="text-align:center;position:relative;z-index:1;">
+                    <div style="width:56px;height:56px;border-radius:50%;background:var(--card);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:'Space Grotesk';font-weight:700;color:var(--accent);font-size:20px;">4</div>
+                    <h4 class="font-heading" style="font-size:16px;font-weight:600;margin-bottom:8px;">Estética</h4>
+                    <p style="font-size:13px;color:var(--fg-muted);">Limpieza, pulido y presentación impecable</p>
+                </div>
+                <div class="reveal" style="text-align:center;position:relative;z-index:1;">
+                    <div style="width:56px;height:56px;border-radius:50%;background:var(--card);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:'Space Grotesk';font-weight:700;color:var(--accent);font-size:20px;"><i class="fas fa-check" style="font-size:18px;"></i></div>
+                    <h4 class="font-heading" style="font-size:16px;font-weight:600;margin-bottom:8px;">Certificación</h4>
+                    <p style="font-size:13px;color:var(--fg-muted);">Prueba final y asignación de condición</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estadísticas -->
+        <section style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+            <div style="max-width:1280px;margin:0 auto;padding:60px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;">
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-target="527">0</div>
+                    <div style="color:var(--fg-muted);font-size:14px;margin-top:8px;">Equipos vendidos</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-target="380">0</div>
+                    <div style="color:var(--fg-muted);font-size:14px;margin-top:8px;">Reparaciones realizadas</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-target="98">0</div>
+                    <div style="color:var(--fg-muted);font-size:14px;margin-top:8px;">% Satisfacción</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-target="2">0</div>
+                    <div style="color:var(--fg-muted);font-size:14px;margin-top:8px;">Años de experiencia</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" style="max-width:1280px;margin:0 auto;padding:100px 24px;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;" class="contact-grid">
+                <div class="reveal">
+                    <div class="section-divider" style="margin-bottom:16px;"></div>
+                    <h2 class="font-heading" style="font-size:clamp(28px,4vw,42px);font-weight:700;margin-bottom:8px;">Contáctanos</h2>
+                    <p style="color:var(--fg-muted);font-size:16px;margin-bottom:36px;line-height:1.7;">Visítanos en nuestra sede o escríbenos. Te asesoramos sin compromiso.</p>
+
+                    <div style="display:flex;flex-direction:column;gap:24px;">
+                        <div style="display:flex;gap:16px;align-items:flex-start;">
+                            <div style="width:44px;height:44px;border-radius:12px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="fas fa-map-marker-alt" style="color:var(--accent);"></i>
+                            </div>
+                            <div>
+                                <div style="font-weight:600;margin-bottom:4px;">Sede principal</div>
+                                <div style="color:var(--fg-muted);font-size:14px;">Llorente, Nariño - Colombia</div>
+                                <div style="color:var(--fg-muted);font-size:14px;">Calle principal #12-45, Local 3</div>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:16px;align-items:flex-start;">
+                            <div style="width:44px;height:44px;border-radius:12px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="fas fa-phone" style="color:var(--accent);"></i>
+                            </div>
+                            <div>
+                                <div style="font-weight:600;margin-bottom:4px;">WhatsApp</div>
+                                <div style="color:var(--fg-muted);font-size:14px;">+57 321 456 7890</div>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:16px;align-items:flex-start;">
+                            <div style="width:44px;height:44px;border-radius:12px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="fas fa-clock" style="color:var(--accent);"></i>
+                            </div>
+                            <div>
+                                <div style="font-weight:600;margin-bottom:4px;">Horario de atención</div>
+                                <div style="color:var(--fg-muted);font-size:14px;">Lunes a Sábado: 8:00 AM - 6:00 PM</div>
+                                <div style="color:var(--fg-muted);font-size:14px;">Domingos: Cerrado</div>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:12px;margin-top:8px;">
+                            <a href="#" style="width:40px;height:40px;border-radius:10px;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--fg-muted);transition:all 0.3s ease;text-decoration:none;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--fg-muted)'" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" style="width:40px;height:40px;border-radius:10px;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--fg-muted);transition:all 0.3s ease;text-decoration:none;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--fg-muted)'" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" style="width:40px;height:40px;border-radius:10px;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--fg-muted);transition:all 0.3s ease;text-decoration:none;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--fg-muted)'" aria-label="TikTok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <form id="contactForm" onsubmit="handleContactSubmit(event)" style="display:flex;flex-direction:column;gap:16px;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px;">
+                        <h3 class="font-heading" style="font-size:20px;font-weight:600;margin-bottom:4px;">Envíanos un mensaje</h3>
+                        <p style="color:var(--fg-muted);font-size:13px;margin-bottom:8px;">Te responderemos en menos de 2 horas.</p>
+                        <div>
+                            <label style="font-size:13px;font-weight:500;display:block;margin-bottom:6px;">Nombre completo</label>
+                            <input type="text" class="form-input" placeholder="Ej: María López" required>
+                        </div>
+                        <div>
+                            <label style="font-size:13px;font-weight:500;display:block;margin-bottom:6px;">WhatsApp</label>
+                            <input type="tel" class="form-input" placeholder="+57 300 123 4567" required>
+                        </div>
+                        <div>
+                            <label style="font-size:13px;font-weight:500;display:block;margin-bottom:6px;">¿En qué te podemos ayudar?</label>
+                            <select class="form-input" required>
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="compra">Quiero comprar un equipo</option>
+                                <option value="asesoria">Necesito asesoría</option>
+                                <option value="reparacion">Quiero reparar mi equipo</option>
+                                <option value="mantenimiento">Mantenimiento preventivo</option>
+                                <option value="vender">Quiero vender mi equipo usado</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="font-size:13px;font-weight:500;display:block;margin-bottom:6px;">Mensaje</label>
+                            <textarea class="form-input" placeholder="Cuéntanos más detalles..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width:100%;margin-top:8px;font-size:15px;padding:16px;">
+                            <i class="fas fa-paper-plane" style="margin-right:8px;"></i>Enviar mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="border-top:1px solid var(--border);background:var(--bg-secondary);">
+        <div style="max-width:1280px;margin:0 auto;padding:48px 24px 24px;">
+            <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;" class="footer-grid">
+                <div>
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+                        <div style="width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent-dim));display:flex;align-items:center;justify-content:center;">
+                            <i class="fas fa-recycle" style="color:var(--bg);font-size:15px;"></i>
+                        </div>
+                        <span class="font-heading" style="font-size:18px;font-weight:700;">Reconecta<span style="color:var(--accent);">Tech</span></span>
+                    </div>
+                    <p style="color:var(--fg-muted);font-size:14px;line-height:1.7;max-width:300px;">Tecnología reacondicionada con garantía real. Damos una segunda vida a los equipos y una primera oportunidad a tu bolsillo.</p>
+                </div>
+                <div>
+                    <h4 class="font-heading" style="font-size:14px;font-weight:600;margin-bottom:16px;color:var(--fg);">Tienda</h4>
+                    <div style="display:flex;flex-direction:column;gap:10px;">
+                        <a href="#productos" style="color:var(--fg-muted);font-size:14px;text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Celulares</a>
+                        <a href="#productos" style="color:var(--fg-muted);font-size:14px;text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Computadores</a>
+                        <a href="#productos" style="color:var(--fg-muted);font-size:14px;text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Tablets</a>
+                        <a href="#productos" style="color:var(--fg-muted);font-size:14px;text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Accesorios</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-heading" style="font-size:14px;font-weight:600;margin-bottom:16px;color:var(--fg);">Servicios</h4>
+                    <div style="display:flex;flex-direction:column;gap:10px;">
+                        <a href="#servicios" style="color:var(--fg-muted);font-size:14px;text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Asesoría</a>
+                        <a href="#servicios" style="color:var(--fg-muted);font-size:14px;text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Mantenimiento</a>
+                        <a href="#servicios" style="color:var(--fg-muted);font-size:14px;text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Reparación</a>
+                        <a href="#servicios" style="color:var(--fg-muted);font-size:14px;text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Compra tu usado</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-heading" style="font-size:14px;font-weight:600;margin-bottom:16px;color:var(--fg);">Legal</h4>
+                    <div style="display:flex;flex-direction:column;gap:10px;">
+                        <a href="#" style="color:var(--fg-muted);font-size:14px;text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Política de garantía</a>
+                        <a href="#" style="color:var(--fg-muted);font-size:14px;text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Devoluciones</a>
+                        <a href="#" style="color:var(--fg-muted);font-size:14px;text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Privacidad</a>
+                        <a href="#" style="color:var(--fg-muted);font-size:14px;text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Términos</a>
+                    </div>
+                </div>
+            </div>
+            <div style="border-top:1px solid var(--border);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+                <p style="color:var(--fg-muted);font-size:13px;">2024 ReconectaTech. Todos los derechos reservados.</p>
+                <p style="color:var(--fg-muted);font-size:13px;">Hecho con <i class="fas fa-heart" style="color:var(--accent);font-size:11px;"></i> en Llorente, Nariño</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Badge flotante de garantía -->
+    <div class="warranty-float">
+        <i class="fas fa-shield-halved" style="color:var(--accent);font-size:20px;"></i>
+        <div>
+            <div style="font-size:13px;font-weight:600;">Garantía incluida</div>
+            <div style="font-size:11px;color:var(--fg-muted);">3 meses en todos los equipos</div>
+        </div>
+    </div>
+
+    <!-- Carrito Overlay -->
+    <div id="cartOverlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+    <!-- Carrito Panel -->
+    <div id="cartPanel" class="cart-panel">
+        <div style="padding:24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+            <h3 class="font-heading" style="font-size:20px;font-weight:600;"><i class="fas fa-shopping-bag" style="margin-right:8px;color:var(--accent);"></i>Tu carrito</h3>
+            <button onclick="toggleCart()" style="background:none;border:none;color:var(--fg-muted);cursor:pointer;font-size:20px;padding:4px;" aria-label="Cerrar carrito">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="cartItems" style="flex:1;overflow-y:auto;padding:16px 24px;">
+            <!-- Se llena con JS -->
+        </div>
+        <div id="cartFooter" style="padding:20px 24px;border-top:1px solid var(--border);display:none;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <span style="color:var(--fg-muted);font-size:14px;">Subtotal</span>
+                <span id="cartSubtotal" style="font-family:'Space Grotesk';font-weight:600;">$0</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+                <span style="color:var(--fg-muted);font-size:14px;">Envío</span>
+                <span style="font-family:'Space Grotesk';font-weight:600;color:var(--accent);">Calculado al pagar</span>
+            </div>
+            <button onclick="handleCheckout()" class="btn-primary" style="width:100%;font-size:16px;padding:16px;">
+                <i class="fas fa-lock" style="margin-right:8px;"></i>Proceder al pago
+            </button>
+            <button onclick="clearCart()" style="width:100%;margin-top:8px;background:none;border:none;color:var(--fg-muted);cursor:pointer;font-size:13px;padding:8px;transition:color 0.3s;" onmouseover="this.style.color='var(--danger)'" onmouseout="this.style.color='var(--fg-muted)'">
+                Vaciar carrito
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal de producto -->
+    <div id="productModal" class="modal-overlay" onclick="if(event.target===this)closeModal()">
+        <div class="modal-content" id="modalContent">
+            <!-- Se llena con JS -->
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+</body>
+</html>
