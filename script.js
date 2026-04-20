@@ -3,230 +3,6 @@
 // ============================================
 const products = [
     {
-        id: 1,
-        name: "iPhone 11",
-        brand: "Apple",
-        category: "celular",
-        condition: "A",
-        conditionLabel: "Como nuevo",
-        price: 1150000,
-        oldPrice: 3200000,
-        image: "https://picsum.photos/seed/iphone11/400/400",
-        specs: ["64 GB", "6.1\" LCD", "A13 Bionic", "12MP Doble Cámara", "Face ID"],
-        description: "iPhone 11 en estado impecable. Sin marcas visibles, batería con salud superior al 85%. Incluye cable y funda.",
-        stock: 3
-    },
-    {
-        id: 2,
-        name: "Samsung Galaxy A54",
-        brand: "Samsung",
-        category: "celular",
-        condition: "A",
-        conditionLabel: "Como nuevo",
-        price: 980000,
-        oldPrice: 2400000,
-        image: "https://picsum.photos/seed/galaxya54/400/400",
-        specs: ["128 GB", "6.4\" AMOLED 120Hz", "Exynos 1380", "50MP Triple Cámara", "IP67"],
-        description: "Galaxy A54 reacondicionado grado A. Pantalla sin rayones, carcasa restaurada. Carga rápida y resistencia al agua.",
-        stock: 5
-    },
-    {
-        id: 3,
-        name: "Xiaomi Redmi Note 12",
-        brand: "Xiaomi",
-        category: "celular",
-        condition: "B",
-        conditionLabel: "Muy buen estado",
-        price: 520000,
-        oldPrice: 1400000,
-        image: "https://picsum.photos/seed/redminote12/400/400",
-        specs: ["128 GB", "6.67\" AMOLED", "Snapdragon 685", "50MP Doble Cámara", "5000 mAh"],
-        description: "Redmi Note 12 con señales mínimas de uso. Rendimiento fluido para el día a día. Batería de larga duración.",
-        stock: 7
-    },
-    {
-        id: 4,
-        name: "iPhone XR",
-        brand: "Apple",
-        category: "celular",
-        condition: "B",
-        conditionLabel: "Muy buen estado",
-        price: 750000,
-        oldPrice: 2100000,
-        image: "https://picsum.photos/seed/iphonexr/400/400",
-        specs: ["64 GB", "6.1\" LCD", "A12 Bionic", "12MP Cámara", "Face ID"],
-        description: "iPhone XR con micro-arañazos en la pantalla (casi imperceptibles). Funcionalidad 100%. Excelente relación calidad-precio.",
-        stock: 4
-    },
-    {
-        id: 5,
-        name: "Samsung Galaxy S21",
-        brand: "Samsung",
-        category: "celular",
-        condition: "A",
-        conditionLabel: "Como nuevo",
-        price: 1350000,
-        oldPrice: 3600000,
-        image: "https://picsum.photos/seed/galaxys21/400/400",
-        specs: ["128 GB", "6.2\" Dynamic AMOLED", "Exynos 2100", "64MP Triple Cámara", "120Hz"],
-        description: "Galaxy S21 premium reacondicionado. Aspecto y rendimiento de equipo nuevo. Carga inalámbrica y 5G listo.",
-        stock: 2
-    },
-    {
-        id: 6,
-        name: "MacBook Air 2017",
-        brand: "Apple",
-        category: "computador",
-        condition: "B",
-        conditionLabel: "Muy buen estado",
-        price: 2200000,
-        oldPrice: 5200000,
-        image: "https://picsum.photos/seed/macbookair17/400/400",
-        specs: ["128 GB SSD", "8 GB RAM", "Intel i5", "13.3\" Retina", "macOS Sonoma"],
-        description: "MacBook Air ideal para estudio y trabajo office. Teclado y trackpad en perfecto estado. Hasta 8 horas de batería.",
-        stock: 2
-    },
-    {
-        id: 7,
-        name: "Lenovo ThinkPad T480",
-        brand: "Lenovo",
-        category: "computador",
-        condition: "A",
-        conditionLabel: "Como nuevo",
-        price: 1650000,
-        oldPrice: 4100000,
-        image: "https://picsum.photos/seed/thinkpadt480/400/400",
-        specs: ["256 GB SSD", "16 GB RAM", "Intel i5-8250U", "14\" FHD IPS", "Windows 11 Pro"],
-        description: "ThinkPad T480, la máquina de trabajo por excelencia. Resistente, con teclado legendario. Ideal para profesionales.",
-        stock: 3
-    },
-    {
-        id: 8,
-        name: "HP Pavilion 15",
-        brand: "HP",
-        category: "computador",
-        condition: "C",
-        conditionLabel: "Buen estado",
-        price: 1100000,
-        oldPrice: 2800000,
-        image: "https://picsum.photos/seed/hppavilion15/400/400",
-        specs: ["256 GB SSD", "8 GB RAM", "AMD Ryzen 5", "15.6\" FHD", "Windows 11"],
-        description: "HP Pavilion reacondicionado con señales estéticas visibles pero rendimiento completo. Perfecto para uso doméstico y estudiantil.",
-        stock: 4
-    },
-    {
-        id: 9,
-        name: "Dell Latitude 5520",
-        brand: "Dell",
-        category: "computador",
-        condition: "A",
-        conditionLabel: "Como nuevo",
-        price: 1950000,
-        oldPrice: 4800000,
-        image: "https://picsum.photos/seed/delllatitude/400/400",
-        specs: ["512 GB SSD", "16 GB RAM", "Intel i7-1165G7", "15.6\" FHD", "Windows 11 Pro"],
-        description: "Latitude empresarial reacondicionado grado A. Chasis de aluminio, segura para negocios. Incluye lector de huellas.",
-        stock: 1
-    },
-    {
-        id: 10,
-        name: "ASUS VivoBook 14",
-        brand: "ASUS",
-        category: "computador",
-        condition: "B",
-        conditionLabel: "Muy buen estado",
-        price: 1280000,
-        oldPrice: 3100000,
-        image: "https://picsum.photos/seed/vivobook14/400/400",
-        specs: ["256 GB SSD", "8 GB RAM", "Intel i3-1115G1", "14\" FHD", "Windows 11"],
-        description: "VivoBook ligero y portátil. Perfecto para estudiantes y trabajo remoto. Diseño delgado con bordes estrechos.",
-        stock: 6
-    },
-    {
-        id: 11,
-        name: "iPad 8va Gen",
-        brand: "Apple",
-        category: "tablet",
-        condition: "A",
-        conditionLabel: "Como nuevo",
-        price: 1350000,
-        oldPrice: 2900000,
-        image: "https://picsum.photos/seed/ipad8gen/400/400",
-        specs: ["32 GB", "10.2\" Retina", "A12 Bionic", "8MP Cámara", "Apple Pencil compatible"],
-        description: "iPad de 8va generación sin marcas de uso. Soporta Apple Pencil para dibujo y notas. Ideal para educación.",
-        stock: 3
-    },
-    {
-        id: 12,
-        name: "Samsung Galaxy Tab A8",
-        brand: "Samsung",
-        category: "tablet",
-        condition: "B",
-        conditionLabel: "Muy buen estado",
-        price: 580000,
-        oldPrice: 1500000,
-        image: "https://picsum.photos/seed/galaxytabA8/400/400",
-        specs: ["64 GB", "10.5\" TFT", "Unisoc T618", "8MP Cámara", "Doble altavoz"],
-        description: "Galaxy Tab A8 para entretenimiento y lectura. Buena pantalla y sonido envolvente. Incluye funda protectora.",
-        stock: 4
-    },
-    {
-        id: 13,
-        name: "AirPods Pro 1ra Gen",
-        brand: "Apple",
-        category: "accesorio",
-        condition: "A",
-        conditionLabel: "Como nuevo",
-        price: 380000,
-        oldPrice: 950000,
-        image: "https://picsum.photos/seed/airpodspro1/400/400",
-        specs: ["Cancelación activa de ruido", "Modo transparente", "Spatial Audio", "IPX4", "Adaptación auditiva"],
-        description: "AirPods Pro reacondicionados. Tips de silicona nuevos (3 tamaños). Estuche con carga inalámbrica funcionando al 100%.",
-        stock: 5
-    },
-    {
-        id: 14,
-        name: "Samsung Galaxy Buds 2",
-        brand: "Samsung",
-        category: "accesorio",
-        condition: "B",
-        conditionLabel: "Muy buen estado",
-        price: 180000,
-        oldPrice: 550000,
-        image: "https://picsum.photos/seed/galaxybuds2/400/400",
-        specs: ["Cancelación de ruido", "IPX2", "Bluetooth 5.2", "6h batería", "Estuche con carga"],
-        description: "Galaxy Buds 2 con excelente sonido y ANC. Estuche con mínimas marcas. Compatibles con Android e iOS.",
-        stock: 8
-    },
-    {
-        id: 15,
-        name: "Cargador Universal 65W",
-        brand: "ReconectaTech",
-        category: "accesorio",
-        condition: "A",
-        conditionLabel: "Nuevo",
-        price: 75000,
-        oldPrice: 150000,
-        image: "https://picsum.photos/seed/cargador65w/400/400",
-        specs: ["65W PD", "USB-C + USB-A", "GaN", "Compatible con notebooks", "Protección contra sobrecarga"],
-        description: "Cargador de nitruro de galio compacto y potente. Carga notebook, celular y tablet simultáneamente. Producto nuevo.",
-        stock: 15
-    },
-    {
-        id: 16,
-        name: "iPhone 12",
-        brand: "Apple",
-        category: "celular",
-        condition: "B",
-        conditionLabel: "Muy buen estado",
-        price: 1480000,
-        oldPrice: 3800000,
-        image: "https://picsum.photos/seed/iphone12rc/400/400",
-        specs: ["64 GB", "6.1\" OLED", "A14 Bionic", "12MP Doble Cámara", "MagSafe"],
-        description: "iPhone 12 con OLED brillante y MagSafe. Micro-desgaste estético. Rendimiento idéntico a uno nuevo.",
-        stock: 3
-    },
-    {
         id: 17,
         name: "POCO X7 Versión Global",
         brand: "POCO",
@@ -239,6 +15,20 @@ const products = [
         specs: ["6.67\" AMOLED 120Hz", "Dimensity 7300", "50MP OIS", "5110 mAh 45W", "5G + IP68"],
         description: "POCO X7 Versión Global en muy buen estado. Pantalla AMOLED 120Hz espectacular, procesador de alto desempeño y cámaras profesionales con OIS. Batería de larga duración con carga turbo 45W. Completamente funcional y probado.",
         stock: 4
+    },
+    {
+        id: 18,
+        name: "Samsung Galaxy S22",
+        brand: "Samsung",
+        category: "celular",
+        condition: "B",
+        conditionLabel: "Outlet Ecocel",
+        price: 1800000,
+        oldPrice: 3800000,
+        image: "images/Outlet-Galaxy-S22.png",
+        specs: ["6.1\" AMOLED 120Hz", "Exynos 2200", "50MP Triple", "8K Video", "IP68"],
+        description: "Categoría Outlet: 100% funcional con detalles estéticos. Cámara triple, sonido Dolby Atmos. Incluye caja, cable y 6 meses de garantía.",
+        stock: 3
     }
 ];
 
@@ -511,15 +301,21 @@ function closeModal() {
 // ============================================
 // CHECKOUT SIMULADO
 // ============================================
-function handleCheckout() {
+function handleCheckout(method = 'whatsapp') {
     if (cart.length === 0) return;
     const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
     const itemsList = cart.map(i => `${i.qty}x ${i.name}`).join(', ');
 
-    // Generar enlace de WhatsApp con los detalles del pedido
-    const message = encodeURIComponent(
-        `Hola ReconectaTech! Quiero comprar:\n\n${cart.map(i => `* ${i.qty}x ${i.name} - ${formatPrice(i.price * i.qty)}`).join('\n')}\n\n*Total: ${formatPrice(total)}*\n\n¿Cuáles son los métodos de pago y envío disponibles?`
-    );
+    let message = "";
+    if (method === 'nequi') {
+        message = encodeURIComponent(
+            `Hola ReconectaTech! Quiero pagar con Nequi:\n\n${cart.map(i => `* ${i.qty}x ${i.name} - ${formatPrice(i.price * i.qty)}`).join('\n')}\n\n*Total a transferir: ${formatPrice(total)}*\n\nPor favor, indíquenme el número de Nequi para enviar el comprobante.`
+        );
+    } else {
+        message = encodeURIComponent(
+            `Hola ReconectaTech! Quiero comprar:\n\n${cart.map(i => `* ${i.qty}x ${i.name} - ${formatPrice(i.price * i.qty)}`).join('\n')}\n\n*Total: ${formatPrice(total)}*\n\n¿Cuáles son los métodos de pago y envío disponibles?`
+        );
+    }
 
     toggleCart();
     showToast('Redirigiendo a WhatsApp para finalizar tu compra...', 'success');
